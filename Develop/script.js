@@ -6,47 +6,46 @@ var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 var numbers = "1234567890"
 var specialcharacters = "~!@#$%^&*()_+`"
 
-var hasLowerCase = confirm ("Do you want lowercase letters in password?")
-var hasUpper = confirm("Would you like upper case letters in your password?")
-var hasNumbers = confirm("Would you like numbers in your password?")
-var hasSpecial = confirm("Would you like special characters in your password?")
-
-var generateBtn = document.querySelector("#generate");
-function writePassword() {
-  var passwordOptions = [];
-  var finalPassword = [];
-  var lenth = prompt("How many characters would you like in the password?")
-  console.log(length)}
-  if (length < 8 || length > 128) {
-    alert ("Password must be between 8-128 characters!")
-    return;
-  }
-  
-if (hasLowerCase === true) {
-    passwordVariations = passwordVariations.concat (lower);
-    finalPassword.push(lower[Math.floor(Math.random() * upper.length)])
-  passwordText.value = password;
-
-} 
-if (hasUpper === true) {
-  passwordOptions = passwordOptions.concat(upper);
-  finalPassword.push(upper[Math.floor(Math.random() * upper.length)]);
-  length--;
-}
-if (hasNumbers === true) {
-  passwordOptions = passwordOptions.concat(number);
-  finalPassword.push(number[Math.floor(Math.random() * number.length)]);
-  length--;
-}
+var LowerCaseQuestion = confirm ("Do you want lowercase letters in password?")
+var UppercaseQuestion = confirm("Would you like upper case letters in your password?")
+var NumbersQuestion = confirm("Would you like numbers in your password?")
+var SpecialCharactersQuestion = confirm("Would you like special characters in your password?")
 
 var generateBtn = document.querySelector("#generate");
 
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
+function generatedPassword () {
+  var password = generatePasswordBtn();
+  var finalpassword = document.querySelector ("#password");
+  finalpassword.value = password;
 }
 
+function generatePasswordBtn() {
+  questionLength = prompt("How many characters would you like in the password?");
+  if (!questionLength) {
+    alert ("Please enter value");
+  } else if (questionLength < 8 || questionLength > 128) {
+    alert ("Please select between 8-128") //might need to change aler to prompt
+  } else {
+    LowerCasequestion=confirm("Would you like lower case characters in password?");
+    UpperCasequestion=confirm("Would you like upper case characters in password?");
+    Numberquestion= confirm ("Would you like number characters in password?");
+    SpecialCharacterquestion=confirm("Would you like special characters in password?");
 
-generateBtn.addEventListener("click", writePassword);
+};
+
+if (!LowerCasequestion && !UpperCasequestion && !qNumberuestion && !SpecialCharacterquestion) {
+  answers = alert("PLease select from the options.");
+  }else if (LowerCasequestion && UpperCasequestion && Numberquestion && SpecialCharacterquestion) {
+    answer = lowerCase.concat(upperCase, number, specialCharacter)
+  } else if 
+
+
+var noSelections = [];
+
+for (var i = 0; i <  questionLength; i++) {
+  var allSelections = answers [Math.flooe(Math.random()* answers.length)];
+  noSelections.push(allSelections);
+}}
+
+var password = noSelections.join ("");
+return password;
