@@ -4,8 +4,8 @@ var generateBtn = document.querySelector("#generate");
 //Password characters
 var upperCase = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
 var lowerCase = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-var numbers = ['0','1','2','3','4','5','6','7','8','9'];
 var specialCharacters = ['!','@','#','$','%','^','&','*','(',')','_','-','+','=','{','[','}',']','|',';','"','<','>','?','.','/'];
+var numbers = ['0','1','2','3','4','5','6','7','8','9'];
 
 var userSelection = [];
 
@@ -17,19 +17,19 @@ function generatePassword() {
     alert("Password must be between 8-128 characters.");
     return false;
   }
-  if(confirm("Would you like uppercase letters password?")) {
+  if(confirm("Would you like uppercase letters password? (Yes or No?)")) {
     userSelection = userSelection.concat(upperCase);
   }
-  if(confirm("Would you like lowercase letters in password?")) {
+  if(confirm("Would you like lowercase letters in password? (Yes or No?)")) {
     userSelection = userSelection.concat(lowerCase);
-  }  
-  if(confirm("Would you like numbers password?")) {
-    userSelection = userSelection.concat(numbers);
   }
-  if(confirm("Would you like special characters password?")) {
+  if(confirm("Would you like special characters password? (Yes or No?)")) {
     userSelection = userSelection.concat(specialCharacters);
   }
-  if (userSelection.length === 0) { 
+  if(confirm("Would you like numbers password? (Yes or No?)")) {
+    userSelection = userSelection.concat(numbers);
+  }
+  if (userSelection.characterlength === 0) { 
     console.log("It's empty!") 
     alert ("Please try again.");
     return false;
@@ -41,8 +41,8 @@ function generatePassword() {
 
 function generatePassword() {
   var password = "";
-  for (var i = 0; i < lengthInput; i++) {
-    var randomIndex = Math.floor(Math.random() * userSelection.length);
+  for (var i = 0; i < characterLength; i++) {
+    var randomIndex = Math.floor(Math.random() * userSelection.characterLength);
     password = password + userSelection[randomIndex];
   }
   return password;
@@ -50,10 +50,10 @@ function generatePassword() {
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword(); 
+  var passwordanswers = generatePassword(); 
   var passwordText = document.querySelector("#password");
 
-  if (validPrompts) {
+  if (passwordanswers) {
       var newPassword = generatePassword();
       passwordText.value = newPassword;
     }
