@@ -37,6 +37,7 @@ function generatePassword() {
   else {
     return true;
 }
+}
 
 function generatePassword() {
   var password = "";
@@ -52,6 +53,11 @@ function writePassword() {
   var password = generatePassword(); 
   var passwordText = document.querySelector("#password");
 
+  if (validPrompts) {
+      var newPassword = generatePassword();
+      passwordText.value = newPassword;
+    }
+    else {
     passwordText.value = "";
   }
 }
