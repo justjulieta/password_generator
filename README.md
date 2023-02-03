@@ -13,6 +13,9 @@ These prompts include the length of the password (at least 8 characters & maximu
 
 Lastly, the password is either displayed in an alert and should successfully meet the requirements.
 
+Below is link to a screenshot of the application:
+
+https://github.com/justjulieta/password_generator/blob/main/assets/screenshot.png
 
 ## Link to Page
 
