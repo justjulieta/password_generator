@@ -51,7 +51,7 @@ function questions() {
 function generatePassword() {
   var password = "";
   for (var i = 0; i < characterLength; i++) {
-    var randomIndex = Math.floor(Math.random() * userSelection.character);
+    var randomIndex = Math.floor(Math.random() * userSelection.characterLength);
     password = password + userSelection[randomIndex];
   }
   return password;
