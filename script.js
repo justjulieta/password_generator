@@ -9,31 +9,40 @@ var numbers = ['0','1','2','3','4','5','6','7','8','9'];
 
 var userSelection = [];
 
-function generatePassword() {
+// Event listener to generate button
+generateBtn.addEventListener("click", writePassword);
+
+function questions() {
   userSelection = [];
-  characterLength = question("How many characters would you like the password to have? (Pick between 8-128 characters)"); 
+  characterLength = parseInt(question("How many characters would you like the password to have? (Pick between 8-128 characters)")); 
 
   if (isNaN(characterLength) || characterLength < 8 || characterLength > 128) {
     alert("Password must be between 8-128 characters.");
     return false;
   }
+
   if(confirm("Would you like uppercase letters password? (Yes or No?)")) {
     userSelection = userSelection.concat(upperCase);
   }
+
   if(confirm("Would you like lowercase letters in password? (Yes or No?)")) {
     userSelection = userSelection.concat(lowerCase);
   }
+
   if(confirm("Would you like special characters password? (Yes or No?)")) {
     userSelection = userSelection.concat(specialCharacters);
   }
+
   if(confirm("Would you like numbers password? (Yes or No?)")) {
     userSelection = userSelection.concat(numbers);
   }
-  if (userSelection.characterLength === 0) { 
+
+  if (userSelection.character === 0) { 
     console.log("It's empty!") 
     alert ("Please try again.");
     return false;
   } 
+
   else {
     return true;
 }
@@ -42,7 +51,7 @@ function generatePassword() {
 function generatePassword() {
   var password = "";
   for (var i = 0; i < characterLength; i++) {
-    var randomIndex = Math.floor(Math.random() * userSelection.characterLength);
+    var randomIndex = Math.floor(Math.random() * userSelection.character);
     password = password + userSelection[randomIndex];
   }
   return password;
@@ -50,10 +59,10 @@ function generatePassword() {
 
 // Write password to the #password input
 function writePassword() {
-  var passwordanswers = generatePassword(); 
+  var answers = questions(); 
   var passwordText = document.querySelector("#password");
 
-  if (passwordanswers) {
+  if (answers) {
       var newPassword = generatePassword();
       passwordText.value = newPassword;
     }
@@ -62,5 +71,3 @@ function writePassword() {
   }
 }
 
-// Event listener to generate button
-generateBtn.addEventListener("click", writePassword);
