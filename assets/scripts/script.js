@@ -11,9 +11,9 @@ var userSelection = [];
 
 function generatePassword() {
   userSelection = [];
-  characterlength = question("How many characters would you like the password to have? (Pick between 8-128 characters)"); 
+  characterLength = question("How many characters would you like the password to have? (Pick between 8-128 characters)"); 
 
-  if (isNaN(characterlength) || characterlength < 8 || characterlength > 128) {
+  if (isNaN(characterLength) || characterLength < 8 || characterLength > 128) {
     alert("Password must be between 8-128 characters.");
     return false;
   }
@@ -29,7 +29,7 @@ function generatePassword() {
   if(confirm("Would you like numbers password? (Yes or No?)")) {
     userSelection = userSelection.concat(numbers);
   }
-  if (userSelection.characterlength === 0) { 
+  if (userSelection.characterLength === 0) { 
     console.log("It's empty!") 
     alert ("Please try again.");
     return false;
