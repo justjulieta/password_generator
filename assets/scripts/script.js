@@ -22,12 +22,12 @@ function generatePassword() {
   }
   if(confirm("Would you like lowercase letters in password?")) {
     userSelection = userSelection.concat(lowerCase);
+  }  
+  if(confirm("Would you like numbers password?")) {
+    userSelection = userSelection.concat(numbers);
   }
   if(confirm("Would you like special characters password?")) {
     userSelection = userSelection.concat(specialCharacters);
-  }
-  if(confirm("Would you like numbers password?")) {
-    userSelection = userSelection.concat(numbers);
   }
   if (userSelection.length === 0) { 
     console.log("It's empty!") 
