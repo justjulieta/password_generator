@@ -1,6 +1,4 @@
 //Password characters
-
-var characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*_-+=";
 var lowerCase = "abcadefghijklmnopqrstuvwxyz"
 var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 var numbers = "1234567890"
@@ -11,7 +9,8 @@ var UppercaseQuestion = confirm("Would you like upper case letters in your passw
 var NumbersQuestion = confirm("Would you like numbers in your password?")
 var SpecialCharactersQuestion = confirm("Would you like special characters in your password?")
 
-var generateBtn = document.querySelector("#generate");
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
 
 function generatedPassword () {
   var password = generatePasswordBtn();
